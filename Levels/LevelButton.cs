@@ -38,7 +38,7 @@ namespace Engine.UI
             set
             {
                 status = value;
-                sprite = new SpriteSheet(getSpriteNameForStatus(status), depth);
+                sprite = new SpriteSheet(getSpriteNameForStatus(status), Priority);
                 sprite.SheetIndex = (LevelIndex - 1) % sprite.NumberOfSheetElements;
             }
         }

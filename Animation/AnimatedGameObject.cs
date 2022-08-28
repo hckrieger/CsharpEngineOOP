@@ -18,7 +18,7 @@ namespace Engine
         public void LoadAnimation(string assetName, string id, 
             bool looping, float frameTime)
         {
-            Animation anim = new Animation(assetName, depth, looping, frameTime);
+            Animation anim = new Animation(assetName, Priority, looping, frameTime);
             animations[id] = anim;
         }
 

@@ -23,7 +23,7 @@ namespace Engine
         /// </summary>
         public Color Color { get; set; } = Color.White;
 
-        public float Priority { get; set; }
+        public float Priority { get; set; } = 1;
 
         public float Rotation { get; set; }
 
@@ -42,7 +42,7 @@ namespace Engine
         /// The depth (between 0 and 1) at which this object should be drawn. 
         /// A larger value means that the object will be drawn on top.
         /// </summary>
-        protected float depth;
+        //protected float depth;
 
         /// <summary>
         /// Creates a new SpriteGameObject with a given sprite name.
@@ -52,10 +52,10 @@ namespace Engine
         /// <param name="sheetIndex">The sheet index of the sprite to use initially.</param>
         public SpriteGameObject(string spriteName, float depth, int sheetIndex=0)
         {
-            this.depth = depth;
+            Priority = depth;
            
             if (spriteName != null)
-                sprite = new SpriteSheet(spriteName, depth, sheetIndex);
+                sprite = new SpriteSheet(spriteName, Priority, sheetIndex);
             Origin = Vector2.Zero;
             Rotation = 0;
         }
@@ -73,7 +73,7 @@ namespace Engine
 
             // draw the sprite at its *global* position in the game world
            if (sprite != null)
-                sprite.Draw(spriteBatch, GlobalPosition, Origin, Rotation, Color);
+                sprite.Draw(spriteBatch, GlobalPosition, Origin, Rotation, Color, Priority);
         }
 
         /// <summary>

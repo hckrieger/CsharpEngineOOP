@@ -73,7 +73,7 @@ namespace Engine
         /// <param name="spriteBatch">The SpriteBatch object used for drawing sprites.</param>
         /// <param name="position">A position in the game world.</param>
         /// <param name="origin">An origin that should be subtracted from the drawing position.</param>
-        public void Draw(SpriteBatch spriteBatch, Vector2 position, Vector2 origin, float rotation, Color color)
+        public void Draw(SpriteBatch spriteBatch, Vector2 position, Vector2 origin, float rotation, Color color, float depth)
         {
             // mirror the sprite?
             SpriteEffects spriteEffects = SpriteEffects.None;
