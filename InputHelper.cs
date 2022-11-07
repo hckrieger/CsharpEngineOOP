@@ -16,9 +16,12 @@ namespace Engine
         // A reference to the game
         ExtendedGame game;
 
+        GameTime dt;
+
         public InputHelper(ExtendedGame game)
         {
             this.game = game;
+            dt = new GameTime();
         }
 
         /// <summary>
@@ -110,6 +113,11 @@ namespace Engine
         public bool KeyDown(Keys k)
         {
             return currentKeyboardState.IsKeyDown(k);
+        }
+
+        public bool KeyUp(Keys k)
+        {
+            return currentKeyboardState.IsKeyUp(k);
         }
     }
 }
